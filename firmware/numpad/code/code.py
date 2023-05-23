@@ -43,6 +43,10 @@ REDO_Y_TT_Z = KC.TD(REDO_Y,REDO_Z)
 SLASH_TTT_PRNS = KC.TD(KC.KP_SLASH,KC.LPRN,KC.RPRN)
 ZERO_H_WASD = KC.LT(2, KC.KP_0)
 DOT_H_LSFT = KC.MT(KC.KP_DOT, KC.LSFT, prefer_hold=True)
+LHCL = KC.MT(KC.LEFT, KC.LGUI(KC.LEFT), prefer_hold=True)
+RHCL = KC.MT(KC.RIGHT, KC.LGUI(KC.RIGHT), prefer_hold=True)
+UHCL = KC.MT(KC.UP, KC.LGUI(KC.UP), prefer_hold=True)
+DHCL = KC.MT(KC.DOWN, KC.LGUI(KC.DOWN), prefer_hold=True)
 # StickyMod
 CMD_TAB = KC.SM(kc=KC.TAB, mod=KC.LGUI)
 CMD_SFTTAB = KC.SM(KC.TAB, KC.LSFT(KC.LGUI))
@@ -52,7 +56,7 @@ keyboard.keymap = [
         KC.KP_7,      KC.KP_8,    KC.KP_9,      SLASH_TTT_PRNS,   EQUAL_TT_NUMLOCK,
         KC.KP_4,      KC.KP_5,    KC.KP_6,      KC.KP_ASTERISK,   KC.DELETE,
         KC.KP_1,      KC.KP_2,    KC.KP_3,      KC.KP_MINUS,      UNDO_Z,
-        ZERO_H_WASD,  DOT_H_LSFT, ENTER_TT_TAB, KC.KP_PLUS,     REDO_Y_TT_Z,
+        ZERO_H_WASD,  DOT_H_LSFT, ENTER_TT_TAB, KC.KP_PLUS,       REDO_Y_TT_Z,
     ],
     [
         KC.TRNS,      KC.UP,      KC.TRNS,      KC.TRNS,          KC.TRNS,
@@ -62,8 +66,8 @@ keyboard.keymap = [
     ],
     [
         KC.NULL,      KC.NULL,    KC.NULL,     KC.TRNS,          KC.TRNS,
-        KC.HOME,      KC.UP,      KC.END,      KC.TRNS,          KC.BSPC,
-        KC.LEFT,      KC.DOWN,    KC.RGHT,     KC.TRNS,          COPY,
+        KC.HOME,      UHCL,       KC.END,      KC.TRNS,          KC.BSPC,
+        LHCL,         DHCL,       RHCL,        KC.TRNS,          COPY,
         ZERO_H_WASD,  KC.TRNS,    CMD_TAB,     KC.KP_ENTER,      PASTE,
     ]
 ]
