@@ -8,6 +8,8 @@ from kmk.handlers.sequences import simple_key_sequence
 from kmk.modules.sticky_mod import StickyMod
 from kmk.modules.modtap import ModTap
 
+# TODO: Make PASTE into PASTE_TT_PASTEVALUES
+
 # inits
 keyboard = KMKKeyboard()
 keyboard.debug_enabled = True
@@ -38,7 +40,7 @@ REDO_Z = simple_key_sequence(( KC.LGUI(KC.LSFT,no_release=True), KC.Z, KC.LGUI(K
 # TapDance
 # Tap once for = and twice for numlock layer
 EQUAL_TT_NUMLOCK = KC.TD(KC.KP_EQUAL,LAYER_1)
-ENTER_TT_TAB = KC.TD(KC.ENTER,KC.TAB)
+ENTER_TT_TAB = KC.TD(KC.KP_ENTER,KC.TAB)
 REDO_Y_TT_Z = KC.TD(REDO_Y,REDO_Z)
 SLASH_TTT_PRNS = KC.TD(KC.KP_SLASH,KC.LPRN,KC.RPRN)
 ZERO_H_WASD = KC.LT(2, KC.KP_0)
