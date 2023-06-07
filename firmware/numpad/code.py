@@ -40,10 +40,13 @@ REDO_Z = simple_key_sequence(( KC.LGUI(KC.LSFT,no_release=True), KC.Z, KC.LGUI(K
 # TapDance
 # Tap once for = and twice for numlock layer
 EQUAL_TT_NUMLOCK = KC.TD(KC.KP_EQUAL,LAYER_1)
+DELETE_TT_CLEAR = KC.TD(KC.DELETE,KC.SLCK)
 ENTER_TT_TAB = KC.TD(KC.KP_ENTER,KC.TAB)
 REDO_Y_TT_Z = KC.TD(REDO_Y,REDO_Z)
 SLASH_TTT_PRNS = KC.TD(KC.KP_SLASH,KC.LPRN,KC.RPRN)
 ZERO_H_WASD = KC.LT(2, KC.KP_0)
+CMD_L = KC.LGUI(KC.LEFT)
+CMD_R = KC.LGUI(KC.RIGHT)
 DOT_H_LSFT = KC.MT(KC.KP_DOT, KC.LSFT, prefer_hold=True)
 LHCL = KC.MT(KC.LEFT, KC.LGUI(KC.LEFT), prefer_hold=True)
 RHCL = KC.MT(KC.RIGHT, KC.LGUI(KC.RIGHT), prefer_hold=True)
@@ -56,7 +59,7 @@ CMD_SFTTAB = KC.SM(KC.TAB, KC.LSFT(KC.LGUI))
 keyboard.keymap = [
     [
         KC.KP_7,      KC.KP_8,    KC.KP_9,      SLASH_TTT_PRNS,   EQUAL_TT_NUMLOCK,
-        KC.KP_4,      KC.KP_5,    KC.KP_6,      KC.KP_ASTERISK,   KC.DELETE,
+        KC.KP_4,      KC.KP_5,    KC.KP_6,      KC.KP_ASTERISK,   DELETE_TT_CLEAR,
         KC.KP_1,      KC.KP_2,    KC.KP_3,      KC.KP_MINUS,      UNDO_Z,
         ZERO_H_WASD,  DOT_H_LSFT, ENTER_TT_TAB, KC.KP_PLUS,       REDO_Y_TT_Z,
     ],
@@ -67,8 +70,8 @@ keyboard.keymap = [
         KC.TRNS,      KC.TRNS,    KC.TAB,       KC.KP_ENTER,      PASTE,
     ],
     [
-        KC.NULL,      KC.NULL,    KC.NULL,     KC.TRNS,          KC.TRNS,
-        KC.HOME,      UHCL,       KC.END,      KC.TRNS,          KC.BSPC,
+        KC.HOME,      CMD_L,      CMD_R,       KC.TRNS,          KC.TRNS,
+        KC.END,       UHCL,       KC.END,      KC.TRNS,          KC.BSPC,
         LHCL,         DHCL,       RHCL,        KC.TRNS,          COPY,
         ZERO_H_WASD,  KC.TRNS,    CMD_TAB,     KC.KP_ENTER,      PASTE,
     ]
